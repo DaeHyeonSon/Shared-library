@@ -40,7 +40,7 @@ def call() {
                             string(name: 'GIT_URL', value: URL),
                             string(name: 'BRANCH', value: BRANCH),
                             string(name: 'REPONAME', value: REPO_NAME),
-                        ], wait : false # wiat 하지 않기 -> 호출 후 그냥 종료(리소스 소모화 최소)
+                        ], wait : false // wiat 하지 않기 -> 호출 후 그냥 종료(리소스 소모화 최소)
                     }
                 }
             }
