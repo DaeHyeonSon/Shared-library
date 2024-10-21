@@ -22,14 +22,6 @@ def call() {
                 }
             }
 
-            stage('Deploy') {
-                steps {
-                    echo 'Deploying...'
-                    // 배포 명령어 추가
-                    //sh './deploy.sh'
-                }
-            }
-
             stage('SonarQube Analysis') {
                 steps{
                     script{
@@ -42,6 +34,14 @@ def call() {
                             string(name: 'REPONAME', value: REPO_NAME),
                         ], wait : false // wiat 하지 않기 -> 호출 후 그냥 종료(리소스 소모화 최소)
                     }
+                }
+            }
+
+            stage('Deploy') {
+                steps {
+                    echo 'Deploying...'
+                    // 배포 명령어 추가
+                    //sh './deploy.sh'
                 }
             }
         }
